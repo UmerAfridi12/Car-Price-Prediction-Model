@@ -1,0 +1,193 @@
+/* Semi-transparent background for the overlay */
+.carousel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the transparency to make it darker */
+    z-index: 1040; /* Ensure the overlay is below the modal content */
+}
+
+/* Close icon */
+.close-icon {
+    position: fixed;
+    top: 20px; /* Adjusted top position */
+    right: 30px; /* Adjusted right position to bring it slightly left */
+    color: #fff;
+    font-size: 32px; /* Increased font size */
+    cursor: pointer;
+    z-index: 1050;
+}
+
+/* Left and Right Navigation */
+.carousel-control-prev,
+.carousel-control-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 32px; /* Increased font size */
+    cursor: pointer;
+    z-index: 1050;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+/* Center the carousel image */
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: transparent !important; /* Remove background color */
+    border: none !important;
+    padding: 0; /* Remove padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 80vh; /* Ensure it fits within the viewport */
+    margin: auto;
+}
+
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #210224;
+    padding: 10px;
+}
+
+.form-header {
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background-color: #760d36;
+    border-radius: 5px;
+}
+
+/* Form container styles */
+.car-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2e0232 !important; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.466) !important;
+}
+
+.form-label {
+    color: #fffdfd !important;
+}
+
+/* Form input styles */
+.form-control {
+    margin-bottom: 15px;
+    background-color: #000000ab !important;
+    color: #8f8d8d !important;
+    border: none;
+}
+
+.btn-block {
+    width: 100%;
+    font-weight: bold;
+    color: #ffffff !important;
+    background-color: #760d36 !important;
+    border: none;
+}
+
+.mt-4 {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fffcfc;
+    background-color: #2e0232db !important; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: -4px 5px 10px 7px rgba(0, 0, 0, 0.466) !important;
+}
+
+.mt-4 h4 {
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background-color: #760d36;
+    border-radius: 5px;
+}
+
+.recommendation-section {
+    width: 70%;
+    margin: auto;
+    background-color: #fffcfc;
+}
+
+.rec {
+    padding: 20px;
+    font-size: large;
+}
+
+/* Custom image container styles */
+.custom-image-container {
+    background-color: transparent; /* Make background transparent */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    border: none; /* Remove border */
+}
+
+.custom-image-container img {
+    background-color: transparent; /* Ensure the image background is transparent */
+    border: none; /* Remove any borders from the image */
+    display: block; /* Ensure the image is displayed as a block element */
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Remove borders and headings from the carousel */
+.carousel-caption {
+    display: none !important;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .car-form {
+        max-width: 100%;
+    }
+}
+
+/* Additional elements */
+.additional-element {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 5px; /* Further reduced padding */
+    margin-bottom: 5px; /* Further reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px; /* Reduced font size */
+}
+
+.alert-info {
+    color: #fffdfd;
+    background-color: #760d36;
+    border: none;
+}

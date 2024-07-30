@@ -1,0 +1,297 @@
+/* Semi-transparent background for the overlay */
+.carousel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the transparency to make it darker */
+    z-index: 1040; /* Ensure the overlay is below the modal content */
+}
+
+/* Close icon */
+.close-icon {
+    position: fixed;
+    top: 20px; /* Adjusted top position */
+    right: 30px; /* Adjusted right position to bring it slightly left */
+    color: #fff;
+    font-size: 32px; /* Increased font size */
+    cursor: pointer;
+    z-index: 1050;
+}
+
+/* Left and Right Navigation */
+.carousel-control-prev,
+.carousel-control-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 32px; /* Increased font size */
+    cursor: pointer;
+    z-index: 1050;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+/* Center the carousel image */
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: transparent !important; /* Remove background color */
+    border: none !important;
+    padding: 0; /* Remove padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 80vh; /* Ensure it fits within the viewport */
+    margin: auto;
+}
+
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./assets/images/hero-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover; /* Optional: adjusts the background size */
+    padding: 0px;
+}
+
+header {
+    background-color: hsl(222, 47%, 15%); /* Optional: Background color for the header */
+    padding: 10px 30px;
+    justify-content: space-between;
+}
+
+.brand-name a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Optional: Spacing between items */
+}
+
+nav ul li {
+    margin: 0;
+    padding: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    /*color: #007bff;*/ /* Optional: Hover color */
+    background-color: #437880;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav ul li.button {
+    margin: 0;
+    padding: 5px;
+}
+
+nav ul li.button a {
+    background-color: #ffffff;
+    color: #343a40;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+}
+
+nav ul li.button a:hover {
+    background-color: #343a40;
+    color: #ffffff;
+    border-color: #343a40;
+    
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-header {
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background-color: hsl(222, 47%, 15%);
+    background: size 100%;;
+    border-radius: 5px;
+}
+
+/* Form container styles */
+.car-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: hsl(1, 91%, 37%)!important; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.466) !important;
+}
+
+.form-label {
+    color: #fffdfd !important;
+}
+
+/* Form input styles */
+.form-control {
+    margin-bottom: 15px;
+    background-color: hsl(222, 47%, 15%) !important;
+    color: white !important;
+    border: none;
+}
+
+.btn-block {
+    width: 100%;
+    font-weight: bold;
+    color: #ffffff !important;
+    background-color:  #ffffff !important;
+    background-color: hsl(222, 47%, 15%) !important;
+    border: none;
+}
+
+.mt-4 {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fffcfc;
+    background-color:  hsl(222, 44%, 14%) !important; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: -4px 5px 10px 7px rgba(0, 0, 0, 0.466) !important;
+}
+
+.mt-4 h4 {
+    padding: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background-color: hsl(0, 0%, 44%);
+    background: size 100%;;
+    border-radius: 5px;
+}
+
+.recommendation-section {
+    width: 70%;
+    margin: auto;
+    background-color: #fffcfc;
+}
+
+.rec {
+    padding: 20px;
+    font-size: large;
+}
+
+/* Custom image container styles */
+.custom-image-container {
+    background-color: transparent; /* Make background transparent */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    border: none; /* Remove border */
+}
+
+.custom-image-container img {
+    background-color: transparent; /* Ensure the image background is transparent */
+    border: none; /* Remove any borders from the image */
+    display: block; /* Ensure the image is displayed as a block element */
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Remove borders and headings from the carousel */
+.carousel-caption {
+    display: none !important;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .car-form {
+        max-width: 100%;
+    }
+}
+
+/* Additional elements */
+.additional-element {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 5px; /* Further reduced padding */
+    margin-bottom: 5px; /* Further reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px; /* Reduced font size */
+}
+
+.alert-info {
+    color: #fffdfd;
+    background-color: hsl(222, 47%, 15%);
+    border: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: hsl(222, 47%, 15%);
+    color: white;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Styling for car recommendations */
+.recommendation-card {
+    border: 2px solid hsl(0, 0%, 44%); /* Small border to differentiate each car */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}

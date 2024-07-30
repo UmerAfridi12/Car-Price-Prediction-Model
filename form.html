@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style 2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Car Prediction Model</title>
+    <link rel="icon" href="pic2.jpg" type="image/png">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navdiv">
+                
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form method="post" id="carForm" class="car-form shadow p-4 mb-5 bg-white rounded">
+            <h2 class="form-header">User Details Form</h2>
+
+            <div class="form-group">
+                <label for="makeSelect" class="form-label">Make:</label>
+                <select id="makeSelect" name="makeSelect" class="form-control">
+                    <option value="">Select Make</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="modelSelect" class="form-label">Model:</label>
+                <select id="modelSelect" name="modelSelect" class="form-control">
+                    <option value="">Select Model</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="variantSelect" class="form-label">Variant:</label>
+                    <select id="variantSelect" name="variantSelect" class="form-control">
+                        <option value="">Select Variant</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="yearSelect" class="form-label">Year:</label>
+                    <select id="yearSelect" name="yearSelect" class="form-control">
+                        <option value="">Select Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="fuelTypeSelect" class="form-label">Fuel Type:</label>
+                    <select id="fuelTypeSelect" name="fuelTypeSelect" class="form-control">
+                        <option value="">Select Fuel Type</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="engineCapacitySelect" class="form-label">Engine Capacity:</label>
+                    <select id="engineCapacitySelect" name="engineCapacitySelect" class="form-control">
+                        <option value="">Select Engine Capacity</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="colorSelect" class="form-label">Color:</label>
+                    <select id="colorSelect" name="colorSelect" class="form-control">
+                        <option value="">Select Color</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group" id="colorInputDiv" style="display: none;">
+                    <label for="otherColorInput" class="form-label">Enter Color:</label>
+                    <input type="text" id="otherColorInput" name="otherColorInput" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="registeredInSelect" class="form-label">Registered In:</label>
+                <select id="registeredInSelect" name="registeredInSelect" class="form-control">
+                    <option value="">Select Registered In</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="transmissionSelect" class="form-label">Transmission:</label>
+                    <select id="transmissionSelect" name="transmissionSelect" class="form-control">
+                        <option value="">Select Transmission</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="assemblySelect" class="form-label">Assembly:</label>
+                    <select id="assemblySelect" name="assemblySelect" class="form-control">
+                        <option value="">Select Assembly</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mileage" class="form-label">Mileage:</label>
+                <input type="number" id="mileage" name="mileage" class="form-control" placeholder="Enter mileage"
+                    required>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" id="submitButton" onclick="predictPrice()">Check Value</button>
+
+            <!-- Prediction result -->
+            <div id="predictionContainer" class="alert alert-info mt-4" style="display: none;">
+                <h4><span id="prediction"></span></h4>
+            </div>
+        </form>
+
+        <div id="recommendationsContainer" class="mt-4" style="display: none;">
+            <h4>Recommended Cars for you</h4>
+            <div id="recommendationsList" class="rec"></div>
+        </div>
+
+        <h1 style="color: red; margin: auto; text-align: center;" id="error"></h1>
+        <div id="recommendationsContainer" style="display: none;">
+            <h4>Recommended Cars for you</h4>
+        </div>
+
+        <div class="recommendation-section" id="recommendation">
+            <div id="recommendationsList"></div> <!-- Element to display recommendations -->
+
+            <!-- Bootstrap Modal -->
+            <div class="modal fade" id="carouselModal" tabindex="-1" role="dialog" aria-labelledby="carouselModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div id="modalCarousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" id="modalCarouselInner"></div>
+                                <a class="carousel-control-prev" href="#modalCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#modalCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Bootstrap Modal ENDS-->
+        </div><!-- Recommendation Section END -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Car Prediction Model. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
