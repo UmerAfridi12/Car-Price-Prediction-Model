@@ -1,54 +1,13 @@
-<div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/autofix)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/autofix?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/autofix?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/DcTLSTbDXww?style=social)](https://youtu.be/DcTLSTbDXww)
+Car Price Prediction
 
-  <br />
-  <br />
+Data Collection & Cleaning: Scraped and compiled 46,000+ used car listings from PakWheels using Python (BeautifulSoup/Requests). Performed extensive data cleaning, including handling missing values, inconsistent formatting, categorical encoding, and outlier detection to ensure high-quality input for analysis and modeling.
 
-  <h2 align="center">Autofix - Car Service Website</h2>
+Exploratory Data Analysis (EDA): Conducted detailed EDA to uncover key factors influencing car prices, such as brand, model, year, mileage, engine capacity, and fuel type. Visualized distributions, correlations, and outliers using matplotlib and seaborn, helping to generate actionable insights for feature selection.
 
-  Autofix is a fully responsive car service website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+Model Development: Implemented and compared multiple machine learning algorithms including Linear Regression, Random Forest, XGBoost, and LightGBM. Performed hyperparameter tuning to optimize performance and tested various feature engineering strategies.
 
-  <a href="https://codewithsadee.github.io/autofix/"><strong>➥ Live Demo</strong></a>
+Model Evaluation: Assessed models using Root Mean Squared Error (RMSE) as the primary evaluation metric. Identified the best-performing model (XGBoost/LightGBM depending on results) based on predictive accuracy and generalization capability.
 
-</div>
+Deployment: Built a Flask web application to deploy the model, providing an interactive user interface where users can input car attributes (make, model, mileage, year, fuel type, etc.) and receive an instant predicted price estimate.
 
-<br />
-
-### Demo Screeshots
-
-![Autofix Desktop Demo](./readme-images/desktop.png "Desktop Demo")
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-### Run Locally
-
-To run **Autofix** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/autofix.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/autofix.git
-```
-
-### Contact
-
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
-
-### License
-
-This project is **free to use** and does not contains any license.
+Outcome: Delivered a scalable and production-ready solution that can assist buyers and sellers in estimating fair market prices for used cars, improving decision-making and transparency in the automotive marketplace.
